@@ -1,9 +1,13 @@
 //This makes a random choice of rock, paper, or scissor.
-const choices = ["Rock", "Paper", "Scissor"];
-const computerReturn = null;
-const randomChoice = choices[Math.floor(Math.random()*choices.length)];
-const computerSelection = getComputerChoice();
-const playerSelection = getPlayerChoice();
+let choices = ["Rock", "Paper", "Scissor"];
+let computerReturn = null;
+let randomChoice = choices[Math.floor(Math.random()*choices.length)];
+let computerSelection = getComputerChoice();
+let playerSelection = getPlayerChoice();
+let trackComputerWins = 0;
+let trackPlayerWins = 0;
+let trackTies = 0;
+let tracker = ""
 
 function getComputerChoice(){
     return randomChoice;
@@ -20,29 +24,38 @@ function singleRound(){
     if (playerSelection.toLowerCase() == "rock" &&
     computerSelection.toLowerCase() == "scissor")
     {
-    console.log("player wins");
+    console.log("Player wins");
+    return trackPlayerWins ++;
     }
 
     else if(playerSelection.toLowerCase() == "paper" &&
     computerSelection.toLowerCase() == "rock")
     {
-        console.log("player wins");
+        console.log("Player wins");
+        return trackPlayerWins ++;
     }
     else if(playerSelection.toLowerCase() == "scissor" &&
     computerSelection.toLowerCase() == "paper")
     {
-        console.log("player wins");
+        console.log("Player wins");
+        return trackPlayerWins ++;
     }
     else if(playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
         console.log("It's a tie");
+        return trackTies ++;
     }
     else{
-        console.log("computer wins");
+        console.log("Computer wins");
+        return trackComputerWins ++;
     }
 }
 
-
 function game(){
-singleRound();
+    singleRound();
+
+    console.log("Computer win tracks: " + trackComputerWins);
+    console.log("Player win tracks: " + trackPlayerWins);
+    console.log("Ties tracks: " + trackTies);
 }
+game();
