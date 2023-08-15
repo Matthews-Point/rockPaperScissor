@@ -45,9 +45,3 @@ function game(){
     console.log("Player win tracks: " + trackPlayerWins);
     console.log("Ties tracks: " + trackTies);
 }
-
-game();
-game();
-game();
-game();
-game();
