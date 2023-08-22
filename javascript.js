@@ -149,9 +149,9 @@ function rockGame(){
     else{
         alert("c won");
     }
+
+
     
-
-
 }
 function paperGame(){
     if (!(p === 5 || c === 5)){
