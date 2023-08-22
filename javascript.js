@@ -5,6 +5,14 @@ let trackTies = 0;
 let rockButton = document.getElementById('rock');
 let paperButton = document.getElementById('paper');
 let scissorButton = document.getElementById('scissor');
+
+let playerScore = document.getElementById('playerScore')
+let computerScore = document.getElementById('computerScore')
+let tieScore = document.getElementById('tieScore')
+
+
+
+
 function rockRound(){
     let computerSelection = choices[Math.floor(Math.random()*choices.length)];
     let playerSelection = "rock"
@@ -15,29 +23,34 @@ function rockRound(){
     computerSelection.toLowerCase() == "scissor")
     {
     console.log("Player wins");
-    return trackPlayerWins ++;
+    playerScore.textContent++;
+    
     }
 
     else if(playerSelection.toLowerCase() == "paper" &&
     computerSelection.toLowerCase() == "rock")
     {
         console.log("Player wins");
-        return trackPlayerWins ++;
+    //    return trackPlayerWins ++;
+    playerScore.textContent++;
     }
     else if(playerSelection.toLowerCase() == "scissor" &&
     computerSelection.toLowerCase() == "paper")
     {
         console.log("Player wins");
-        return trackPlayerWins ++;
+    //    return trackPlayerWins ++;
+    playerScore.textContent++;
     }
     else if(playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
         console.log("It's a tie");
-        return trackTies ++;
+    //    return trackTies ++;
+    tieScore.textContent++;
     }
     else{
         console.log("Computer wins");
-        return trackComputerWins ++;
+    //    return trackComputerWins ++;
+    computerScore.textContent++;
     }
 }
 function paperRound(){
@@ -50,29 +63,29 @@ function paperRound(){
     computerSelection.toLowerCase() == "scissor")
     {
     console.log("Player wins");
-    return trackPlayerWins ++;
+    playerScore.textContent++;
     }
 
     else if(playerSelection.toLowerCase() == "paper" &&
     computerSelection.toLowerCase() == "rock")
     {
         console.log("Player wins");
-        return trackPlayerWins ++;
+        playerScore.textContent++;
     }
     else if(playerSelection.toLowerCase() == "scissor" &&
     computerSelection.toLowerCase() == "paper")
     {
         console.log("Player wins");
-        return trackPlayerWins ++;
+        playerScore.textContent++;
     }
     else if(playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
         console.log("It's a tie");
-        return trackTies ++;
+        tieScore.textContent++;
     }
     else{
         console.log("Computer wins");
-        return trackComputerWins ++;
+        computerScore.textContent++;
     }
 }
 function scissorRound(){
@@ -85,48 +98,39 @@ function scissorRound(){
     computerSelection.toLowerCase() == "scissor")
     {
     console.log("Player wins");
-    return trackPlayerWins ++;
+    playerScore.textContent++;
     }
 
     else if(playerSelection.toLowerCase() == "paper" &&
     computerSelection.toLowerCase() == "rock")
     {
         console.log("Player wins");
-        return trackPlayerWins ++;
+        playerScore.textContent++;
     }
     else if(playerSelection.toLowerCase() == "scissor" &&
     computerSelection.toLowerCase() == "paper")
     {
         console.log("Player wins");
-        return trackPlayerWins ++;
+        playerScore.textContent++;
     }
     else if(playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
         console.log("It's a tie");
-        return trackTies ++;
+        tieScore.textContent++;
     }
     else{
         console.log("Computer wins");
-        return trackComputerWins ++;
+        computerScore.textContent++;
     }
 }
 function rockGame(){
     rockRound();
-    console.log("Computer win tracks: " + trackComputerWins);
-    console.log("Player win tracks: " + trackPlayerWins);
-    console.log("Ties tracks: " + trackTies);
 }
 function paperGame(){
     paperRound();
-    console.log("Computer win tracks: " + trackComputerWins);
-    console.log("Player win tracks: " + trackPlayerWins);
-    console.log("Ties tracks: " + trackTies);
 }
 function scissorGame(){
     scissorRound();
-    console.log("Computer win tracks: " + trackComputerWins);
-    console.log("Player win tracks: " + trackPlayerWins);
-    console.log("Ties tracks: " + trackTies);
 }
 
 
