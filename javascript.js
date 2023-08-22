@@ -9,8 +9,10 @@ let scissorButton = document.getElementById('scissor');
 let playerScore = document.getElementById('playerScore')
 let computerScore = document.getElementById('computerScore')
 let tieScore = document.getElementById('tieScore')
-
-
+let p = 0;
+let pPassed = false;
+let c = 0;
+let cPassed = false;
 
 
 function rockRound(){
@@ -24,6 +26,7 @@ function rockRound(){
     {
     console.log("Player wins");
     playerScore.textContent++;
+    p++;
     
     }
 
@@ -33,6 +36,7 @@ function rockRound(){
         console.log("Player wins");
     //    return trackPlayerWins ++;
     playerScore.textContent++;
+    p++;
     }
     else if(playerSelection.toLowerCase() == "scissor" &&
     computerSelection.toLowerCase() == "paper")
@@ -40,6 +44,7 @@ function rockRound(){
         console.log("Player wins");
     //    return trackPlayerWins ++;
     playerScore.textContent++;
+    p++;
     }
     else if(playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
@@ -51,6 +56,7 @@ function rockRound(){
         console.log("Computer wins");
     //    return trackComputerWins ++;
     computerScore.textContent++;
+    c++;
     }
 }
 function paperRound(){
@@ -64,6 +70,7 @@ function paperRound(){
     {
     console.log("Player wins");
     playerScore.textContent++;
+    p++; 
     }
 
     else if(playerSelection.toLowerCase() == "paper" &&
@@ -71,12 +78,14 @@ function paperRound(){
     {
         console.log("Player wins");
         playerScore.textContent++;
+        p++;
     }
     else if(playerSelection.toLowerCase() == "scissor" &&
     computerSelection.toLowerCase() == "paper")
     {
         console.log("Player wins");
         playerScore.textContent++;
+        p++;
     }
     else if(playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
@@ -86,6 +95,7 @@ function paperRound(){
     else{
         console.log("Computer wins");
         computerScore.textContent++;
+        c++;
     }
 }
 function scissorRound(){
@@ -99,6 +109,7 @@ function scissorRound(){
     {
     console.log("Player wins");
     playerScore.textContent++;
+    p++;
     }
 
     else if(playerSelection.toLowerCase() == "paper" &&
@@ -106,12 +117,14 @@ function scissorRound(){
     {
         console.log("Player wins");
         playerScore.textContent++;
+        p++;
     }
     else if(playerSelection.toLowerCase() == "scissor" &&
     computerSelection.toLowerCase() == "paper")
     {
         console.log("Player wins");
         playerScore.textContent++;
+        p++;
     }
     else if(playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
@@ -121,17 +134,49 @@ function scissorRound(){
     else{
         console.log("Computer wins");
         computerScore.textContent++;
+        c++;
     }
 }
+
+
 function rockGame(){
-    rockRound();
+    if (!(p === 5 || c === 5)){
+        rockRound();
+    }
+    else if (p === 5){
+        alert("P won");
+    }
+    else{
+        alert("c won");
+    }
+    
+
+
 }
 function paperGame(){
-    paperRound();
+    if (!(p === 5 || c === 5)){
+        paperRound();
+    }
+    else if (p === 5){
+        alert("P won");
+    }
+    else{
+        alert("c won");
+    }
 }
+
 function scissorGame(){
-    scissorRound();
+    if (!(p === 5 || c === 5)){
+        scissorRound();
+    }
+    else if (p === 5){
+        alert("P won");
+    }
+    else{
+        alert("c won");
+    }
 }
+
 
 
 rockButton.addEventListener('click', rockGame);
